@@ -36,7 +36,7 @@ def predict():
     print(churn)
 
     result = {
-        'churn_probability': float(round(y_pred, 4)),
+        'churn_probability': float(round(y_pred, 3)),
         'churn': bool(churn)
     }
 

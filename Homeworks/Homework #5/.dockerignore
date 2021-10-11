@@ -1,2 +1,4 @@
 dv.bin
 model1.bin
+__pycache__
+.ipynb_checkpoints
