@@ -5,13 +5,9 @@ import os
 from flask import Flask, request, jsonify
 
 model_file = 'model.bin'
-dv_file = 'dv.bin'
 
 with open(model_file, 'rb') as f:
-    model = pickle.load(f)
-    
-with open(dv_file, 'rb') as f:
-    dv = pickle.load(f)
+    dv, model = pickle.load(f)
 
 app = Flask('rain_tommorow')
 
@@ -25,12 +21,13 @@ def predict():
 
     X = dv.transform([customer])
     y_pred = model.predict_proba(X)[0,1]
-    rain = y_pred > 0.36
+    print("Probability is", y_pred)
+    rain = y_pred >= 0.33
 
     print(rain)
 
     result = {
-        'tommorow_rain_probability': float(round(y_pred, 3)),
+        'tommorow_rain_probability': float(round(y_pred, 6)),
         'rain': bool(rain)
     }
 
