@@ -4,7 +4,8 @@ import os
 
 from flask import Flask, request, jsonify
 
-model_file = 'model.bin'
+model_file = 'model_t.bin'
+# model_file = 'model.bin'
 
 with open(model_file, 'rb') as f:
     dv, model = pickle.load(f)
