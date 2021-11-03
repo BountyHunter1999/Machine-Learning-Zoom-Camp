@@ -10,7 +10,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 
 # Parameters
-t = 0.36
+t = 0.28
 
 # Data Preparation
 df = pd.read_csv('weatherAUS.csv', index_col="Date", parse_dates=True)
@@ -75,7 +75,7 @@ print(f"auc={auc}")
 
 # Save the model
 
-with open("model_t.bin", "wb") as f:
+with open("model.bin", "wb") as f:
     pickle.dump((dv,model), f)
 
-print(f"The model is saved to model_t.bin")
+print(f"The model is saved to model.bin")

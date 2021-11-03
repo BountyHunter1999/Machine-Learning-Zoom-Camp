@@ -5,6 +5,7 @@
 - Our Goal is to design a predictive model with the use of machine learning algorithms to forecast whether or not it will rain tomorrow in Australia.
 
 # Instructions on how to run the project
+=> remember to use the see the Dockerfile
 
 ## Creating the environment
 

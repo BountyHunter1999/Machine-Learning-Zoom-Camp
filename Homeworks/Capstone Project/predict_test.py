@@ -2,27 +2,27 @@ import requests
 
 url = 'http://localhost:9696/predict'
 
-data = {'Location': 'Melbourne',
- 'MinTemp': 12.4,
- 'MaxTemp': 18.1,
- 'Rainfall': 0.0,
- 'Evaporation': 5.6,
- 'Sunshine': 1.9,
- 'WindGustDir': 'SW',
- 'WindGustSpeed': 35.0,
- 'WindDir9am': 'SE',
- 'WindDir3pm': 'SE',
- 'WindSpeed9am': 19.0,
- 'WindSpeed3pm': 15.0,
- 'Humidity9am': 55.0,
- 'Humidity3pm': 51.0,
- 'Pressure9am': 1013.6,
- 'Pressure3pm': 1010.7,
- 'Cloud9am': 5.0,
- 'Cloud3pm': 5.0,
- 'Temp9am': 14.2,
- 'Temp3pm': 16.9,
- 'RainToday': 0}
+data = {'Location': 'Ballarat',
+ 'MinTemp': 6.5,
+ 'MaxTemp': 11.2,
+ 'Rainfall': 4.8,
+ 'Evaporation': 4.8,
+ 'Sunshine': 8.4,
+ 'WindGustDir': 'W',
+ 'WindGustSpeed': 52.0,
+ 'WindDir9am': 'W',
+ 'WindDir3pm': 'WSW',
+ 'WindSpeed9am': 31.0,
+ 'WindSpeed3pm': 28.0,
+ 'Humidity9am': 99.0,
+ 'Humidity3pm': 95.0,
+ 'Pressure9am': 1010.4,
+ 'Pressure3pm': 1012.6,
+ 'Cloud9am': 8.0,
+ 'Cloud3pm': 8.0,
+ 'Temp9am': 8.5,
+ 'Temp3pm': 10.8,
+ 'RainToday': 1}
 
 response = requests.post(url, json=data).json()
 print(response)

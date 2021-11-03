@@ -4,8 +4,7 @@ import os
 
 from flask import Flask, request, jsonify
 
-model_file = 'model_t.bin'
-# model_file = 'model.bin'
+model_file = 'model.bin'
 
 with open(model_file, 'rb') as f:
     dv, model = pickle.load(f)
@@ -23,7 +22,7 @@ def predict():
     X = dv.transform([customer])
     y_pred = model.predict_proba(X)[0,1]
     print("Probability is", y_pred)
-    rain = y_pred >= 0.33
+    rain = y_pred >= 0.28
 
     print(rain)
 
