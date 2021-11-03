@@ -15,7 +15,7 @@ COPY . /app/
 EXPOSE 9696
 
 # For heroku, we cannot map to a custom port so the binding
-ENTRYPOINT ["gunicorn", "predict:app"]
+# ENTRYPOINT ["gunicorn", "predict:app"]
 
 # For any other way of use
-# ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
+ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "predict:app"]
