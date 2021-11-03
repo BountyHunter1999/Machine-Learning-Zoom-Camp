@@ -39,7 +39,10 @@ or, for installation from the `pipfile`
 - Now, u can run `python predict_test.py` to see the result, u can tinker with the data there to view the results
 - As the `Humidity3pm` is a major factor that influence our model output u can see the changes it will have in our model
 
-# For the cloud(on heroku)
+# For the cloud(on heroku) 
+# SITE LINK: https://ml-zoomcamp-cap-docker.herokuapp.com/
+# Send POST request to https://ml-zoomcamp-cap-docker.herokuapp.com/predict
+
 
 - install heroku with `curl https://cli-assets.heroku.com/install.sh | sh`
 
