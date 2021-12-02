@@ -1,14 +1,16 @@
 # import tflite_runtime.interpreter as tflite
 import numpy as np
-import tensorflow.lite as tflite
+# import tensorflow.lite as tflite
+import tflite_runtime.interpreter as tflite
 from io import BytesIO
 from urllib import request
 
 from PIL import Image
 
-classes = ['cats', "dogs"]
+classes = ['dogs', "cats"]
 
-interpreter = tflite.Interpreter(model_path='dog-cat-classifier.tflite')
+interpreter = tflite.Interpreter(model_path='cats-dogs-v2.tflite')
+# interpreter = tflite.Interpreter(model_path='cats-dogs-v1.tflite')
 interpreter.allocate_tensors()
 
 input_index = interpreter.get_input_details()[0]['index']
@@ -48,7 +50,7 @@ def predict(url):
 
     return dict(zip(classes, float_prediction))
 
-def lamda_handler(event, context):
+def lambda_handler(event, context):
     url = event['url']
     result = predict(url)
     return result
