@@ -9,7 +9,7 @@ model_file = 'model.bin'
 with open(model_file, 'rb') as f:
     dv, model = pickle.load(f)
 
-app = Flask('rain_tommorow')
+app = Flask('heart_disease')
 
 @app.route('/', methods=['GET'])
 def reroute():
@@ -17,18 +17,17 @@ def reroute():
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    customer = request.get_json()
+    data = request.get_json()
 
-    X = dv.transform([customer])
-    y_pred = model.predict_proba(X)[0,1]
+    X = dv.transform([data])
+    y_pred = model.predict(X)
     print("Probability is", y_pred)
-    rain = y_pred >= 0.28
+    hd = y_pred >= 0.5
 
-    print(rain)
+    print(hd)
 
     result = {
-        'tommorow_rain_probability': float(round(y_pred, 6)),
-        'rain': bool(rain)
+        'Heart Disease': bool(hd)
     }
 
     return jsonify(result)

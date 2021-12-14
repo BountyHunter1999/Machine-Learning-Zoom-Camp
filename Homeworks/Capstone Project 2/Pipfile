@@ -9,6 +9,7 @@ gunicorn = "*"
 scikit-learn = "==0.24.1"
 pandas = "*"
 numpy = "*"
+xgboost = "*"
 
 [dev-packages]
 
